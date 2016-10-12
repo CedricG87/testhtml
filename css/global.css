@@ -8,18 +8,10 @@
   src: url(../fonts/Ubuntu-Regular.ttf) format('truetype');
 }
 
-html {
-  background: none;
-}
-
 
 
 @media(max-width:480px) {
-  body {
-    background-image: none;
-    background-color: #f2f2f2;
-  }
-
+  
   .divider h2 {    
     margin: 10px 0 !important;
   }
