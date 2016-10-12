@@ -485,15 +485,15 @@ label,
 }
 
 .entry .buttons button {
-  background-color: #337ab7;
-  border-bottom: 5px solid #204d74;
-  border-radius: 2px;
-  font-size: 18px;
-  line-height: 1.3333333;
-  padding: 10px 16px;
-  color: #fff;
-  height: 60px;
-  width: 100%;
+ background-color: #FFF;
+    border-bottom: 0px solid #204d74;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    padding: 10px 16px;
+    color: #000;
+    height: 60px;
+    width: 100%;
 }
 
 .entry .buttons button:hover {
