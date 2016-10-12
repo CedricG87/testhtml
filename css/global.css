@@ -14,7 +14,7 @@ html {
 
 body {
   background-attachment: fixed;
-  background-image: url("https://cedricg87.github.io/testhtml/background_new.jpg");
+  /*background-image: url("https://cedricg87.github.io/testhtml/background_new.jpg");*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
