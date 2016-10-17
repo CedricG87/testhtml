@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Azure AD B2C UI</title>
+    
+    
+   
+    <link rel="stylesheet" href="https://cedricg87.github.io/testhtml/css/global.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+        <style>
+
+      /* NOTE: 
+      
+      background: #092756;
+      
+      The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+   
+.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
+.btn-block { width: 100%; display:block; }
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%;
+
+}
+
+body { 
+	width: 100%;
+	height:100%;
+	padding-left:20px;
+	padding-right:20px;
+	font-family: 'Open Sans', sans-serif;
+	
+	
+	background-repeat: no-repeat;
+ 
+
+  background-position: 0px 0px;
+
+background: rgb(252,176,241); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(252,176,241,1) 7%, rgba(26,185,248,1) 56%, rgba(142,211,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(252,176,241,1) 7%,rgba(26,185,248,1) 56%,rgba(142,211,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(252,176,241,1) 7%,rgba(26,185,248,1) 56%,rgba(142,211,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb0f1', endColorstr='#8ed3e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	 background-size: 100vw 100vh;
+	 background-attachment: fixed;
+	
+
+}
+/*
+.intro{
+	display:none;
+}
+.create{
+	display:none;
+}
+.divider{
+	display:none;
+}
+.login { 
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	margin: 0px 0 0 -150px;
+	width:300px;
+	height:300px;
+}*/
+.login .info{ color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:left;padding-top:20px; }
+.login label{ color: #fff;color: rgba(255,255,255,0.7);  text-align:left;font-weight: 400; }
+
+.login input { 
+	width: 100%; 
+	margin-bottom: 0px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+    </style>
+
+    
+    
+  </head>
+
+  <body>
+
+    <div class="login">
+    <img src="https://cedricg87.github.io/testhtml/title_home.png" class="center-block">
+  
+	<!--<p class="info">Sign in with your existing account</p>-->
+    <!--<form method="post">
+    	<input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>-->
+    
+    
+    
+<div id="api" data-name="SelfAsserted">
+    <div class="intro">
+        <p>Create your account by providing the following details</p>
+    </div>
+
+    <div id="attributeVerification">
+        <div class="errorText" id="passwordEntryMismatch" style="display: none;">The password entry fields do not match. Please enter the same password in both fields and try again.</div>
+        <div class="errorText" id="requiredFieldMissing" style="display: none;">A required field is missing. Please fill out all required fields and try again.</div>
+        <div class="errorText" id="fieldIncorrect" style="display: none;">One or more fields are filled out incorrectly. Please check your entries and try again.</div>
+        <div class="errorText" id="claimVerificationServerError" style="display: none;"></div>
+        <div class="attr" id="attributeList">
+            <ul>
+                <li>
+                    <div class="attrEntry validate">
+                        <div>
+                            <div class="verificationInfoText" id="email_intro" style="display: inline;">Verification is necessary. Please click Send button.</div>
+                            <div class="verificationInfoText" id="email_info" style="display:none">Verification code has been sent to your inbox. Please copy it to the input box below.</div>
+                            <div class="verificationSuccessText" id="email_success" style="display:none">E-mail address verified. You can now continue.</div>
+                            <div class="verificationErrorText" id="email_fail_retry" style="display:none">Incorrect code, try again.</div>
+                            <div class="verificationErrorText" id="email_fail_no_retry" style="display:none">Exceeded number of retries you need to send new code.</div>
+                            <div class="verificationErrorText" id="email_fail_server" style="display:none">Server error, please try again</div>
+                            <div class="verificationErrorText" id="email_incorrect_format" style="display:none">Incorect format.</div>
+                        </div>
+
+                    <div class="helpText show">This information is required</div>
+                        <label>Email</label>
+                        <input id="email" class="textInput" type="text" placeholder="Email" required="" autofocus=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Email address that can be used to contact you.');" class="tiny">What is this?</a>
+
+                    <div class="buttons verify" claim_id="email">
+                        <div id="email_ver_wait" class="working" style="display: none;"></div>
+                            <label id="email_ver_input_label" for="email_ver_input" style="display: none;">Verification code</label>
+                            <input id="email_ver_input" type="text" placeholder="Verification code" style="display:none">
+                            <button id="email_ver_but_send" class="sendButton" type="button" style="display: inline;">Send verification code</button>
+                            <button id="email_ver_but_verify" class="verifyButton" type="button" style="display:none">Verify code</button>
+                            <button id="email_ver_but_resend" class="sendButton" type="button" style="display:none">Send new code</button>
+                            <button id="email_ver_but_edit" class="editButton" type="button" style="display:none">Change e-mail</button>
+                            <button id="email_ver_but_default" class="defaultButton" type="button" style="display:none">Default</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText">8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @ # $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ " ( ) ; .This information is required</div>
+                        <label>Enter password</label>
+                        <input id="password" class="textInput" type="password" placeholder="Enter password" pattern="^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]))([A-Za-z\d@#$%^&amp;*\-_+=[\]{}|\\:',?/`~&quot;();!]|\.(?!@)){8,16}$" title="8-16 characters, containing 3 out of 4 of the following: Lowercase characters, uppercase characters, digits (0-9), and one or more of the following symbols: @ # $ % ^ &amp; * - _ + = [ ] { } | \ : ' , ? / ` ~ &quot; ( ) ; ." required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Enter password');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText"> This information is required</div>
+                        <label>Reenter password</label>
+                        <input id="reenterPassword" class="textInput" type="password" placeholder="Reenter password" pattern="^((?=.*[a-z])(?=.*[A-Z])(?=.*\d)|(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])|(?=.*[a-z])(?=.*\d)(?=.*[^A-Za-z0-9])|(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]))([A-Za-z\d@#$%^&amp;*\-_+=[\]{}|\\:',?/`~&quot;();!]|\.(?!@)){8,16}$" title=" " required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Reenter password');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText">This information is required</div>
+                        <label>Name</label>
+                        <input id="displayName" class="textInput" type="text" placeholder="Name" required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Your display name.');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText"></div>
+                        <label>Gender</label>
+                        <input id="extension_Gender_F" name="extension_Gender" type="radio" value="F" autofocus="">
+                        <label for="extension_Gender_F">Female</label>
+                        <input id="extension_Gender_M" name="extension_Gender" type="radio" value="M">
+                        <label for="extension_Gender_M">Male</label>
+                        <a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText"></div>
+                        <label>Loyalty number</label>
+                        <input id="extension_MemNum" class="textInput" type="text" placeholder="Loyalty number"><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Membership number');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText"></div>
+                        <label>State</label>
+                        <select class="dropdown_single" id="state">
+                            <option style="display:none" disabled="disabled" value="placeholder" selected="">State</option>
+                            <option value="WA">Washington</option>
+                            <option value="NY">New York</option>
+                            <option value="CA">California</option>
+                        </select>
+                        <a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('Your residential state or province.');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="attrEntry">
+                        <div class="helpText">This information is required</div>
+                        <label>Zip code</label>
+                        <input id="postalCode" class="textInput" type="text" placeholder="Zip code" required=""><a href="javascript:void(0)" onclick="selfAssertedClient.showHelp('The postal code of your address.');" class="tiny">What is this?</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="buttons"> <button id="continue" disabled="">Create</button> <button id="cancel">Cancel</button></div>
+    </div>
+    <div class="verifying-modal">
+        <div class="preloader"> <img src="https://login.microsoftonline.com/static/img/win8loader.gif" alt="Please wait"></div>
+        <div id="verifying_blurb"></div>
+    </div>
+</div>
+</div> 
+</div>
+    
+
+
+    
+    
+  </body>
+</html>
