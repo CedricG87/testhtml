@@ -340,6 +340,7 @@ label,
   font-size: 18px;
   height: 60px;
   width: 49.9%;
+  visibility: hidden;
 }
 
 @media(max-width:767px) {
@@ -359,13 +360,13 @@ label,
 }
 
 .buttons button#continue {      
-  background-color: #5cb85c;
-  border-bottom: 5px solid #449d44;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
   border-color: #4cae4c;
   color: #fff;
   font-size: 18px;
   height: 60px;
-  width: 49%;  
+  width: 100%;  
 }
 
 @media(max-width:767px){
@@ -383,10 +384,10 @@ label,
 
 .buttons button[disabled]#continue,
 .buttons button[disabled]:hover#continue {
-  background-color: #5cb85c;
-  background-image: none;
-  border-color: #4cae4c;
-  color: #fff;
+background-color: #ffffff;
+    background-image: none;
+    border-color: #ffffff;
+    color: #000;
 }
 
 .buttons button#email_ver_but_resend,
