@@ -363,8 +363,8 @@ label,
 .buttons button#continue {      
   background-color: #ffffff;
   border-bottom: 1px solid #ffffff;
-  border-color: #4cae4c;
-  color: #fff;
+  border-color: #ffffff;
+  color: #000;
   font-size: 18px;
   height: 60px;
   width: 100%;  
