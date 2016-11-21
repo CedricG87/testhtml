@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Azure AD B2C UI</title>
+    
+    
+   
+    <link rel="stylesheet" href="https://cedricg87.github.io/testhtml/css/global.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    
+        <style>
+
+      /* NOTE: 
+      
+      background: #092756;
+      
+      The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+   
+.btn { display: inline-block; *display: inline; *zoom: 1; padding: 4px 10px 4px; margin-bottom: 0; font-size: 13px; line-height: 18px; color: #333333; text-align: center;text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); vertical-align: middle; background-color: #f5f5f5; background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6); background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6)); background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6); background-image: -o-linear-gradient(top, #ffffff, #e6e6e6); background-image: linear-gradient(top, #ffffff, #e6e6e6); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#ffffff, endColorstr=#e6e6e6, GradientType=0); border-color: #e6e6e6 #e6e6e6 #e6e6e6; border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25); border: 1px solid #e6e6e6; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05); cursor: pointer; *margin-left: .3em; }
+.btn:hover, .btn:active, .btn.active, .btn.disabled, .btn[disabled] { background-color: #e6e6e6; }
+.btn-large { padding: 9px 14px; font-size: 15px; line-height: normal; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+.btn:hover { color: #333333; text-decoration: none; background-color: #e6e6e6; background-position: 0 -15px; -webkit-transition: background-position 0.1s linear; -moz-transition: background-position 0.1s linear; -ms-transition: background-position 0.1s linear; -o-transition: background-position 0.1s linear; transition: background-position 0.1s linear; }
+.btn-primary, .btn-primary:hover { text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25); color: #ffffff; }
+.btn-primary.active { color: rgba(255, 255, 255, 0.75); }
+.btn-primary { background-color: #4a77d4; background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4); background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4); background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4)); background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4); background-image: -o-linear-gradient(top, #6eb6de, #4a77d4); background-image: linear-gradient(top, #6eb6de, #4a77d4); background-repeat: repeat-x; filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);  border: 1px solid #3762bc; text-shadow: 1px 1px 1px rgba(0,0,0,0.4); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5); }
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] { filter: none; background-color: #4a77d4; }
+.btn-block { width: 100%; display:block; }
+
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box; box-sizing:border-box; }
+
+html { width: 100%; height:100%;
+
+}
+
+body { 
+	width: 100%;
+	height:100%;
+	padding-left:20px;
+	padding-right:20px;
+	font-family: 'Open Sans', sans-serif;
+	
+	background-repeat: no-repeat;
+
+ 
+  background-position: 0px 0px;
+
+background: rgb(252,176,241); /* Old browsers */
+background: -moz-linear-gradient(45deg, rgba(252,176,241,1) 7%, rgba(26,185,248,1) 56%, rgba(142,211,232,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg, rgba(252,176,241,1) 7%,rgba(26,185,248,1) 56%,rgba(142,211,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg, rgba(252,176,241,1) 7%,rgba(26,185,248,1) 56%,rgba(142,211,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcb0f1', endColorstr='#8ed3e8',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	  background-attachment: fixed;
+}
+
+ul li {
+   
+    margin: -10px;
+}
+
+
+/*
+.intro{
+	display:none;
+}
+.create{
+	display:none;
+}
+.divider{
+	display:none;
+}
+.login { 
+	position: absolute;
+	top: 0%;
+	left: 50%;
+	margin: 0px 0 0 -150px;
+	width:300px;
+	height:300px;
+}*/
+.login .info{ color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:left;padding-top:20px; }
+.login label{ color: #fff;color: rgba(255,255,255,0.7);  text-align:left;font-weight: 400;font-size: larger; }
+
+.login input[type=select], input[type=text] { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+
+/*.login input[type=checkbox]{ 
+	width:initial;
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}*/
+.login input[type=checkbox], input[type=radio] {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  margin: 20px 15px;
+  background: #fcfff4;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+  label {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    cursor: pointer;
+    background: linear-gradient(top, #222 0%, #45484d 100%);
+    box-shadow: inset 0px 1px 1px rgba(0,0,0,0.5), 0px 1px 0px rgba(255,255,255,1);
+    &:after {
+      content: '';
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      background: $activeColor;
+      background: linear-gradient(top, #fcb0f1 0%, #fcb0f1 100%);
+      box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+      opacity: 0;
+    }
+    &:hover::after {
+      opacity: 0.3;
+    }
+  }
+  input[type=checkbox] {
+    visibility: hidden;
+    &:checked + label:after {
+      opacity: 1;
+    }   
+  } 
+}
+
+input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
+
+    </style>
+
+    
+    
+  </head>
+
+  <body>
+
+    <div class="login">
+  
+	<!--<p class="info">Sign in with your existing account</p>-->
+    <!--<form method="post">
+    	<input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    </form>-->
+    
+    <div id="api" data-name="Unified">
+        <!--<div class="social" role="form">
+               <div class="intro">
+                       <h2>Sign in with your social account</h2>
+               </div>
+               <div class="options">
+                       <div><button class="accountButton firstButton" id="MicrosoftAccountExchange" tabindex="1">msa</button></div>
+                       <div><button class="accountButton" id="FacebookExchange" tabindex="1">fb</button></div>
+               </div>
+        </div>
+        <div class="divider">
+               <h2>OR</h2>
+        </div>
+        <div class="localAccount" role="form">
+               <div >
+                       <h2>CONNECTEZ VOUS A VOTRE COMPTE EXISTANT</h2>
+               </div>
+               <div class="error pageLevel" aria-hidden="true" style="display: none;">
+                       <p role="alert"></p>
+               </div>
+               <div class="entry">
+                       <div class="entry-item">
+                               <label for="logonIdentifier">MAIL ADDRESS</label> 
+                               <div class="error itemLevel" aria-hidden="true" style="display: none;">
+                                      <p role="alert"></p>
+                               </div>
+                               <input type="email" id="logonIdentifier" name="LogonIdentifier" pattern="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="LogonIdentifier" value="" tabindex="1">
+                       </div>
+                       <div class="entry-item">
+                              <label for="password">PASSWORD</label>
+                               <div class="error itemLevel" aria-hidden="true" style="display: none;">
+                                      <p role="alert"></p>
+                               </div>
+                               <input type="password" id="password" name="Password" placeholder="Password" tabindex="1">
+                       </div>
+                       <div class="working"></div>
+                       <div class="buttons" > <button class="btn btn-primary btn-block btn-large" id="next" tabindex="1" >Sign in</button> </div>
+                       <div><a id="forgotPassword" tabindex="2">Forgot your password?</a></div>
+               </div>
+               
+               <div class="divider">
+                       <h2>OR</h2>
+               </div>
+               <div class="create">
+                       <p>Don't have an account?<a id="createAccount" tabindex="1">Sign up now</a> </p>
+               </div>-->
+        
+        </div>
+      
+</div> 
+</div>
+    
+
+
+    
+    
+  </body>
+</html>
