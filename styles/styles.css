@@ -164,7 +164,7 @@
   width:34px;
   height:30px;
   overflow:hidden;
-  background-image:url('https://proseware.skwantoso.com/public/images/transparent.gif');
+  background-image:url('https://cedricg87.github.io/testhtml/images/transparent.gif');
 }
 #u13 {
   position:absolute;
@@ -706,7 +706,7 @@
   width:420px;
   height:100px;
   overflow:hidden;
-  background-image:url('https://proseware.skwantoso.com/public/images/transparent.gif');
+  background-image:url('https://cedricg87.github.io/testhtml/images/transparent.gif');
 }
 
 /* Adjustments to stock file from designer */
@@ -745,10 +745,10 @@
   line-height:normal;
   border:none;
   background-color: transparent;  
-  background-image: url("https://proseware.skwantoso.com/public/images/u13.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u13.png");  
 }
 #GoogleExchange:hover {
-  background-image: url("https://proseware.skwantoso.com/public/images/u13_mouseOver.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u13_mouseOver.png");  
 }
 #FacebookExchange {
   position:absolute;
@@ -766,10 +766,10 @@
   line-height:normal;
   border:none;
   background-color: transparent;
-  background-image: url("https://proseware.skwantoso.com/public/images/u15.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u15.png");  
 }
 #FacebookExchange:hover {
-  background-image: url("https://proseware.skwantoso.com/public/images/u15_mouseOver.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u15_mouseOver.png");  
 }
 #SignUpWithLogonEmailExchange {
   position:absolute;
@@ -787,10 +787,10 @@
   line-height:normal;
   border:none;
   background-color: transparent;
-  background-image: url("https://proseware.skwantoso.com/public/images/u19.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u19.png");  
 }
 #SignUpWithLogonEmailExchange:hover {
-  background-image: url("https://proseware.skwantoso.com/public/images/u19_mouseOver.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u19_mouseOver.png");  
 }
 #SignInWithLogonNameExchange {
   position:absolute;
@@ -808,10 +808,10 @@
   line-height:normal;
   border:none;
   background-color: transparent;
-  background-image: url("https://proseware.skwantoso.com/public/images/u19.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u19.png");  
 }
 #SignInWithLogonNameExchange:hover {
-  background-image: url("https://proseware.skwantoso.com/public/images/u19_mouseOver.png");  
+  background-image: url("https://cedricg87.github.io/testhtml/images/u19_mouseOver.png");  
 }
 #returnLink {
   position:absolute;
